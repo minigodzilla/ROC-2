@@ -145,8 +145,7 @@ h6 {
 	width: 100%;
 }
 
-.form-group,
-.dv-form-toggle {
+.form-group {
 	margin-bottom: 1em;
 }
 
@@ -161,9 +160,10 @@ h6 {
 	border-width: 0;
 	color: #000;
 	margin: 0;
-	padding: 0.75em;
+	padding: 0.325em 0.75em;
 	font-size: 1em;
 	line-height: 1;
+	height: 2.5em;
 
 	&,
 	&:hover {
@@ -186,7 +186,8 @@ h6 {
 	background-repeat: no-repeat;
 	background-size: 1em;
 	color: #000;
-	padding: 0.5em 0.75em;
+	padding: 0.325em 0.75em;
+	height: 2.5em;
 
 	&,
 	&:hover {
@@ -198,56 +199,42 @@ h6 {
 	}
 }
 
-.dv-checkbox {
-	display: none;
-}
-
-.dv-checkbox-label {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m0 0h20v20h-20z' fill='%23fff'/%3E%3C/svg%3E");
-	background-position: 0 50%;
-	background-repeat: no-repeat;
-	background-size: 1.25em;
-	padding-left: 1.875em;
-	font-weight: 400;
-}
-
-.dv-checkbox:checked + .dv-checkbox-label {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m0 0h20v20h-20z' fill='%23fff'/%3E%3Cpath d='m5 8.2-1.5 1.6 5 5 8-8-1.5-1.6-6.5 6.6z' fill='%23000'/%3E%3C/svg%3E");
-}
-
 .form-check {
 	position: relative;
+	padding-left: 0;
 
 	.form-check-input {
-		appearance: none;
-		position: absolute;
-		width: 1em;
-		height: 1em;
-		border: 1px solid #D5D5D5;
-		outline: none;
-
-		&:focus {
-			border-color: #000;
-		}
-
-		&:checked::before {
-			content: '';
-			position: absolute;
-			width: 30%;
-			height: 50%;
-			transform: translate(-50%,-65%) rotate(45deg);
-			border: solid #FA213E;
-			border-width: 0 0.2em 0.2em 0;
-			left: 50%;
-			top: 50%;
-		}
+		display: none;
 	}
 
 	.form-check-label {
-		margin: 0 0 0 1em;
-		font-size: 0.7em;
-		line-height: 1.5;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m0 0h20v20h-20z' fill='%23eee'/%3E%3C/svg%3E");
+		background-position: 0 50%;
+		background-repeat: no-repeat;
+		background-size: 1.25em;
+		padding-left: 1.875em;
+		font-size: 0.625em;
+		font-weight: 400;
 	}
+
+	.form-check-input:checked + .form-check-label{
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m0 0h20v20h-20z' fill='%23eee'/%3E%3Cpath d='m5 8.2-1.5 1.6 5 5 8-8-1.5-1.6-6.5 6.6z' fill='%23000'/%3E%3C/svg%3E");
+	}
+}
+
+.dv-form-toggle-label,
+.dv-form-toggle-option {
+	font-family: 'Bodoni 72',serif;
+	font-size: 1.25em;
+	line-height: 1.675;
+	display: inline-block;
+	margin-right: 0.325em;
+	transition: color 200ms ease;
+}
+
+.dv-form-toggle-input[value='yes'] ~ .dv-yes,
+.dv-form-toggle-input[value='no'] ~ .dv-no {
+	color: #DF4425;
 }
 
 .dv-btn,
@@ -348,6 +335,10 @@ h6 {
 	padding-top: 3em;
 	padding-bottom: 3em;
 
+	.dv-heading {
+		margin-bottom: 1em;
+	}
+
 	#dv-register-form {
 		position: relative;
 
@@ -383,11 +374,25 @@ h6 {
 
 	.dv-img {
 		width: 100%;
+		margin-top: 1.5em;
 	}
 }
 
 .dv-register {
 	background-color: #EADAC3;
+
+	.dv-btn {
+		margin-top: 0.75em;
+	}
+
+	.dv-svg {
+		margin-top: 1.5em;
+	}
+
+	.dv-subheading {
+		margin-top: 1em;
+		font-size: 1.25em;
+	}
 }
 
 footer {
@@ -395,6 +400,10 @@ footer {
 	padding-bottom: 3em;
 	background-color: #00509D;
 	color: #fff;
+
+	.dv-heading {
+		margin-bottom: 1em;
+	}
 
 	.dv-img {
 		margin-bottom: 2em;

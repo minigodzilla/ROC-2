@@ -7,9 +7,11 @@ $(function()
 
 	$('.dv-form-toggle-option').on('click', function() {
 
-		var value = $(this).attr('data-value');
+		var $parent = $(this).parent();
+		var $input = $parent.find('.dv-form-toggle-input');
+		var $value = $(this).attr('data-value');
 
-		$('.dv-form-toggle-input').attr('value', value);
+		$input.attr('value', $value);
 
 	})
 
