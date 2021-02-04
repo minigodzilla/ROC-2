@@ -347,13 +347,14 @@ h6 {
 			position: absolute;
 			width: 100%;
 			left: 0;
-			top: 7em;
+			top: 5em;
 			text-align: center;
 			visibility: hidden;
 			pointer-events: none;
+			font-family: 'Bodoni 72',serif;
 			font-size: 1.5em;
-			font-weight: 600;
 			line-height: 1.25;
+			color: #DF4425;
 		}
 
 		&.dv-success,
