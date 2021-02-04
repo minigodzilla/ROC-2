@@ -19,8 +19,10 @@ $(function()
 	////////////////////////////////////////////////////////////////////////////////
 
 	var $form              = $('#dv-register-form');
-	var $inputs            = $form.find ('.form-control');
+	var $inputs            = $form.find ('.form-control, select');
+	var $checkboxes        = $form.find ('.form-check-input');
 	var $email             = $form.find ('.form-control[name=Email]');
+	var $postal            = $form.find ('.form-control[name=PostalCode]');
 	var $button            = $form.find ('.dv-btn-submit');
 	var errorState         = false;
 
@@ -31,6 +33,21 @@ $(function()
 		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 		if(!regex.test(email))
+		{
+			return false;
+		}
+
+		else
+		{
+			return true;
+		}
+	}
+
+	function isPostal(postal) {
+
+		var regex = /([ABCEGHJKLMNPRSTVXY]\d)([ABCEGHJKLMNPRSTVWXYZ]\d){2}/i;
+
+		if(!regex.test(postal))
 		{
 			return false;
 		}
@@ -57,6 +74,20 @@ $(function()
 	$email.blur (function()
 	{
 		if (!isEmail ($(this).val()))
+		{
+			$(this).removeClass ('is-valid').addClass ('is-invalid');
+		}
+
+		else
+		{
+			$(this).removeClass ('is-invalid').addClass ('is-valid');
+		}
+
+	});
+
+	$postal.blur (function()
+	{
+		if (!isPostal ($(this).val()))
 		{
 			$(this).removeClass ('is-valid').addClass ('is-invalid');
 		}
@@ -102,6 +133,33 @@ $(function()
 		{
 			$email.removeClass ('is-invalid').addClass ('is-valid');
 		}
+
+		// check whether postal code is valid
+		if (!isPostal ($postal.val()))
+		{
+			$postal.removeClass ('is-valid').addClass ('is-invalid');
+			errorState = true;
+		}
+
+		else
+		{
+			$email.removeClass ('is-invalid').addClass ('is-valid');
+		}
+
+		// check for checked checkboxes
+		$checkboxes.each (function()
+		{
+			if ($(this).prop("checked") == false)
+			{
+				$(this).removeClass ('is-valid').addClass ('is-invalid');
+				errorState = true;
+			}
+
+			else
+			{
+				$(this).removeClass ('is-invalid').addClass ('is-valid');
+			}
+		});
 
 		// if form has errors
 		if (errorState)
@@ -268,7 +326,7 @@ $(function()
 
 		new ScrollMagic.Scene
 		({
-			triggerElement: this, triggerHook: 0.5, reverse: false
+			triggerElement: this, triggerHook: 0.65, reverse: false
 		})
 		.setClassToggle(this, 'dv-animated')
 		.addTo(controller);

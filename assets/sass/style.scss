@@ -96,7 +96,7 @@ body {
 	}
 
 	@include media-breakpoint-up(lg) {
-		font-size: 18px;
+		font-size: 19px;
 	}
 
 	@include media-breakpoint-up(xl) {
@@ -104,7 +104,7 @@ body {
 	}
 
 	@include media-breakpoint-up(xxl) {
-		font-size: 24px;
+		font-size: 26px;
 	}
 }
 
@@ -293,14 +293,21 @@ h6 {
 
 .dv-rockport-brings {
 	background-image: url('../img/rockport-brings-bg.jpg');
-	background-position: 50% 0;
+	background-position: 50% 50%;
 	background-size: cover;
 	padding-top: 12em;
 	padding-bottom: 2em;
 
 	.dv-heading {
-		font-size: 1.5em;
 		color: #fff;
+
+		@include media-breakpoint-down(sm) {
+			font-size: 1.5em;
+		}
+
+		@include media-breakpoint-up(md) {
+			font-size: 2em;
+		}
 	}
 }
 
@@ -339,6 +346,12 @@ h6 {
 		margin-bottom: 1em;
 	}
 
+	.dv-logo {
+		position: absolute;
+		bottom: 1em;
+		width: 100%;
+	}
+
 	#dv-register-form {
 		position: relative;
 
@@ -347,8 +360,8 @@ h6 {
 			position: absolute;
 			width: 100%;
 			left: 0;
-			top: 5em;
-			text-align: center;
+			top: 0;
+			text-align: left;
 			visibility: hidden;
 			pointer-events: none;
 			font-family: 'Bodoni 72',serif;
