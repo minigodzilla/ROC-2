@@ -2,9 +2,9 @@
 	/* site settings */
 	define("DEBUG_MODE", "on");
 
-	define("SITE_TITLE", "EMBLEM Developments");
-	define("COMPANY", "EMBLEM Developments Inc.");
-	define("SITE_DESCRIPTION", "Resist the Norm.");
+	define("SITE_TITLE", "The Davisville");
+	define("COMPANY", "Rockport");
+	define("SITE_DESCRIPTION", "Life. Lived better.");
 	
 	/* database */
 	define("DB_HOST", "localhost");
@@ -25,8 +25,8 @@
 	define("DB_DB", "");
 	
 	/* email */
-	define("EMAIL_FROM", "EMBLEM Developments");
-	define("EMAIL_FROM_ADDRESS", "info@emblemdevcorp.com");
+	define("EMAIL_FROM", "Rockport");
+	define("EMAIL_FROM_ADDRESS", "sdiabo@joeyai.com");
 	define("EMAIL_ADMIN", "lgrecu@thebrandfactory.com");
 	define("SENDER_FROM", "email@tbf.email"); # don't change this
 
@@ -39,7 +39,7 @@
 	/* simple thank you for contact us email */
 	# THIS EMAIL MAY BE SENT WHEN A CONTAC PAGE IS SUBMITTED (action=/do-contact, INFO IS NOT SAVED IN THE DB)
 	define("SEND_CONTACT_THANKYOU", "no"); // send a thank you email (yes | no)? 
-	define("THANKYOU_CONTACT_SUBJECT", "Thank you for your inquiry"); // default email subject
+	define("THANKYOU_CONTACT_SUBJECT", "Thank You for Registering."); // default email subject
 	define("THANKYOU_CONTACT_TEMPLATE", "contact"); // no .html needed
 
 ?>
