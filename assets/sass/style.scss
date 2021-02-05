@@ -365,6 +365,10 @@ h6 {
 			font-size: 1.5em;
 			line-height: 1.25;
 			color: #DF4425;
+
+			@include media-breakpoint-up(md) {
+				height: 10em;
+			}
 		}
 
 		&.dv-success,
