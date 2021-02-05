@@ -357,12 +357,9 @@ h6 {
 
 		.dv-form-error-container,
 		.dv-form-success-container {
-			position: absolute;
-			width: 100%;
-			left: 0;
-			top: 1.5em;
+			margin-top: 1.5em;
 			text-align: left;
-			visibility: hidden;
+			display: none;
 			pointer-events: none;
 			font-family: 'Bodoni 72',serif;
 			font-size: 1.5em;
@@ -373,13 +370,13 @@ h6 {
 		&.dv-success,
 		&.dv-error {
 			.dv-form-container {
-				visibility: hidden;
+				display: none;
 			}
 		}
 
 		&.dv-success .dv-form-success-container,
 		&.dv-error .dv-form-error-container {
-			visibility: visible;
+			display: block;
 		}
 	}
 }
