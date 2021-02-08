@@ -25,8 +25,8 @@
 	define("DB_DB", "");
 	
 	/* email */
-	define("EMAIL_FROM", "Rockport");
-	define("EMAIL_FROM_ADDRESS", "sdiabo@joeyai.com");
+	define("EMAIL_FROM", "THE DAVISVILLE");
+	define("EMAIL_FROM_ADDRESS", "info@TheDavisville.com");
 	define("EMAIL_ADMIN", "lgrecu@thebrandfactory.com");
 	define("SENDER_FROM", "email@tbf.email"); # don't change this
 
